@@ -3,12 +3,14 @@
  */
 package edu.isu.cs.cs2263;
 
+import javafx.application.Application;
+import javafx.stage.Stage;
+
 public class App {
     public String getGreeting() {
         return "Hello World!";
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
     }
 }

@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+<<<<<<< HEAD
 <<<<<<< Updated upstream
 ## [1.0.0] - 2021-09-12
 =======
@@ -24,12 +25,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0] - 2021-10-10
 >>>>>>> Stashed changes
+=======
+## [2.0.0] - 2021-10-10
+>>>>>>> main
 
 ### Added
-- Apache CLI Implementation 
-- Added a help option
-- Added a batch option
-- Added a output option
+ - JavaFX capabilities
+ - Gson capabilities
+ - Student class
+ - Course class
+ - IO Manager class
+ - User Interface
+
+### Changed
+
+
+### Removed
+
+## [1.0.0] - 2021-10-10
+
+### Added
+
 
 ### Changed
 

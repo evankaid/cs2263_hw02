@@ -1,6 +1,6 @@
 package edu.isu.cs.cs2263;
 
-
+import java.net.NetworkInterface;
 
 public class Student {
 
@@ -13,29 +13,24 @@ public class Student {
         this.lastName = lastName;
     }
 
-    public static void main(String[] args){
-
-
+    public void setFirstName(String newFirstName){
+        this.firstName = newFirstName;
     }
 
-    public String setFirstName(String firstName){
-
+    public String getFirstName(String firstName){
+        return firstName;
     }
 
-    public void getFirstName(String firstName){
-
+    public void setLastName(String newLastName){
+        this.lastName = newLastName;
     }
 
-    public String setLastName(String lastName){
-
-    }
-
-    public void getLastName(String lastName){
-
+    public String getLastName(String lastName){
+        return lastName;
     }
 
     public String toString(){
-
+        return firstName + " " + lastName;
     }
 
     

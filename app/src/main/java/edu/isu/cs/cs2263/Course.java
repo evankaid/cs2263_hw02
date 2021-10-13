@@ -1,6 +1,6 @@
 package edu.isu.cs.cs2263;
 
-
+import org.checkerframework.checker.index.qual.SubstringIndexBottom;
 
 public class Course {
 
@@ -12,31 +12,32 @@ public class Course {
        
     }
 
-    public static void main(String[] args){
-
-
+    public void setNumber(Integer newNumber){
+        this.number = newNumber;
     }
 
-    public String setNumber(Integer number){
-
+    public Integer getNumber(){
+        return number;
     }
 
-    public void getNumber(){
-
+    public void setSubject(String newSubject){
+        this.subject = newSubject;
     }
 
-    public String setSubject(String subject){
-
+    public String getSubject(){
+        return subject;
     }
 
-    public void getSubject(){
-
+    public void setTitle(String newTitle){
+        this.title = newTitle;
     }
 
-    public 
+    public String getTitle(){
+        return title;
+    }
 
     public String toString(){
-
+        return subject + " " + number + " " + title; 
     }
 
     

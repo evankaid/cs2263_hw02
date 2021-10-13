@@ -3,14 +3,52 @@
  */
 package edu.isu.cs.cs2263;
 
-public class App {
-   
+import javafx.application.Application;
+import javafx.stage.Stage;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
+
+
+public class App extends Application{
+    
+    private static App singleton;
+    
+    private App() {}
+
+    public static App instance(){
+        if (singleton == null){
+            singleton = new App();
+        }
+        return singleton;
+    }
+
+    @Override
+    public void start(Stage stage) throws Exception {
+        stage.setTitle("Student Course Information");
+        Label studentLabel = new Label("Students");
+        Label courseLabel = new Label("Courses");
+        Label isTaking = new Label("Is Taking");
+        ListView<Student> studentList = new ListView<>();
+        ListView<Course> courseList = new ListView<>();
+        Button loadData = new Button("Load Data");
+        VBox studentVBox = new VBox(studentLabel, studentList);
+        VBox courseVBox = new VBox(courseLabel, courseList);
+        HBox hBox = new HBox(studentVBox, isTaking, courseVBox, loadData);
+        Scene scene = new Scene(hBox, 800, 400);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public static void main(String[] args) {
-<<<<<<< Updated upstream
-        System.out.println(new App().getGreeting());
-=======
 
->>>>>>> Stashed changes
+
+        Application.launch(args);
+
+        
+
     }
 }

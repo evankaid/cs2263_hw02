@@ -15,16 +15,7 @@ import javafx.scene.layout.VBox;
 
 public class App extends Application{
     
-    private static App singleton;
     
-    private App() {}
-
-    public static App instance(){
-        if (singleton == null){
-            singleton = new App();
-        }
-        return singleton;
-    }
 
     @Override
     public void start(Stage stage) throws Exception {
@@ -51,4 +42,15 @@ public class App extends Application{
         
 
     }
+
+    // private static App singleton;
+    
+    // private App() {}
+
+    // public static App instance(){
+    //     if (singleton == null){
+    //         singleton = new App();
+    //     }
+    //     return singleton;
+    // }
 }

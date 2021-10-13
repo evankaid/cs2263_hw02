@@ -1,6 +1,5 @@
 package edu.isu.cs.cs2263;
 
-import org.checkerframework.checker.index.qual.SubstringIndexBottom;
 
 public class Course {
 

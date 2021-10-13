@@ -1,6 +1,5 @@
 package edu.isu.cs.cs2263;
 
-import java.net.NetworkInterface;
 
 public class Student {
 

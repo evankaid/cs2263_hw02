@@ -45,6 +45,7 @@ public class App extends Application {
             }
         });
 
+        
         writeData.setOnAction(value -> {
             IOManager iom = new IOManager();
             List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");

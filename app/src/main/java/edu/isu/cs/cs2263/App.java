@@ -34,7 +34,7 @@ public class App extends Application {
         loadData.setOnAction(value -> {
             IOManager iom = new IOManager();
             List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");
-            
+          
         });
 
         VBox studentVBox = new VBox(studentLabel, studentList);

@@ -50,15 +50,10 @@ public class Student implements Serializable {
     }
 
     /**
-     * Concatenate student's full name with their list of course taken
+     * Concatenate student's full name
      */
     public String toString() {
-        String studentInfo = firstName + " " + lastName;
-        // for (int i =0; i < courseList.size(); i++){
-        //     studentInfo += courseList.get(i).toString();
-        //     studentInfo += " , ";
-        // }
-        return studentInfo;
+        return firstName + " " + lastName;
     }
 
 }

@@ -4,7 +4,6 @@
 package edu.isu.cs.cs2263;
 
 import javafx.application.Application;
-import javafx.beans.Observable;
 import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -13,16 +12,17 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-
 import java.io.IOException;
 import java.util.List;
+
+import javax.print.event.PrintJobListener;
 
 public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         stage.setTitle("Student Course Information");
-        Label studentLabel = new Label("Students");
+        Label studentLabel = new Label("Student");
         Label courseLabel = new Label("Courses");
         Label isTaking = new Label("Is Taking");
         ListView<Student> studentList = new ListView<>();
@@ -37,6 +37,7 @@ public class App extends Application {
 
         // On button click, load student data in and display to listview
         loadData.setOnAction(value -> {
+            studentList.getItems().clear();
             IOManager iom = new IOManager();
             List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");
 
@@ -45,18 +46,16 @@ public class App extends Application {
             }
         });
 
-        
         writeData.setOnAction(value -> {
             IOManager iom = new IOManager();
             List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");
             try {
                 iom.writeData("src\\main\\java\\edu\\isu\\cs\\cs2263\\WrittenStudentData.json", listOfStudents);
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (Exception e) {
+                System.out.println(e);
             }
         });
 
-        
         studentList.setOnMouseClicked(value -> {
             courseList.getItems().clear();
             ObservableList<Student> selectedIndex = studentList.getSelectionModel().getSelectedItems();
@@ -87,10 +86,11 @@ public class App extends Application {
 
     // private static App singleton;
 
-    // private App() {}
+    // private App() {
+    // }
 
-    // public static App instance(){
-    // if (singleton == null){
+    // public static App instance() {
+    // if (singleton == null) {
     // singleton = new App();
     // }
     // return singleton;

@@ -27,7 +27,6 @@ public class IOManager implements Serializable {
                 String data = myReader.nextLine();
                 jsonString += data;
             }
-            System.out.println(jsonString);
 
             Gson gs = new Gson();
             Type studentListType = new TypeToken<List<Student>>() {
@@ -51,6 +50,7 @@ public class IOManager implements Serializable {
         Type studentListType = new TypeToken<List<Student>>() {
         }.getType();
         gson.toJson(studentList, studentListType);
+        
 
     }
 }

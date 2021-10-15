@@ -1,0 +1,65 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "courseList": [
+            {
+                "number": 0,
+                "subject": "CS",
+                "title": "Title 0"
+            },
+            {
+                "number": 1,
+                "subject": "CS",
+                "title": "Title 1"
+            },
+            {
+                "number": 2,
+                "subject": "CS",
+                "title": "Title 2"
+            }
+        ]
+    }
+    {
+        "firstName": "Mary",
+        "lastName": "Jones",
+        "courseList": [
+            {
+                "number": 0,
+                "subject": "INFO",
+                "title": "Title 0"
+            },
+            {
+                "number": 1,
+                "subject": "INFO",
+                "title": "Title 1"
+            },
+            {
+                "number": 2,
+                "subject": "CS",
+                "title": "Title 2"
+            }
+        ]
+    }
+    {
+        "firstName": "Steve",
+        "lastName": "Williams",
+        "courseList": [
+            {
+                "number": 0,
+                "subject": "CS",
+                "title": "Title 0"
+            },
+            {
+                "number": 1,
+                "subject": "CS",
+                "title": "Title 1"
+            },
+            {
+                "number": 2,
+                "subject": "INFO",
+                "title": "Title 2"
+            }
+        ]
+    }
+]

@@ -1,14 +1,17 @@
 package edu.isu.cs.cs2263;
 
+import java.io.Serializable;
 
-public class Course {
+public class Course implements Serializable{
 
     Integer number;
     String subject;
     String title;
 
-    public Course(){
-       
+    public Course(Integer number, String subject, String title){
+       this.number = number;
+       this.subject = subject;
+       this.title = title;
     }
 
     public void setNumber(Integer newNumber){

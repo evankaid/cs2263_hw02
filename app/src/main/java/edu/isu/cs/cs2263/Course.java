@@ -4,10 +4,16 @@ import java.io.Serializable;
 
 public class Course implements Serializable{
 
-    Integer number;
-    String subject;
-    String title;
+    private Integer number;
+    private String subject;
+    private String title;
 
+    /**
+     * 
+     * @param number The number of the course. Ex: 1182
+     * @param subject The subject of the course Ex: CS
+     * @param title The name of the course Ex: Intro to Programming
+     */
     public Course(Integer number, String subject, String title){
        this.number = number;
        this.subject = subject;
@@ -38,6 +44,9 @@ public class Course implements Serializable{
         return title;
     }
 
+    /**
+     * Concatenates all course information 
+     */
     public String toString(){
         return subject + " " + number + " " + title; 
     }

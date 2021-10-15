@@ -4,6 +4,8 @@
 package edu.isu.cs.cs2263;
 
 import javafx.application.Application;
+import javafx.beans.Observable;
+import javafx.collections.ObservableList;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,6 +14,7 @@ import javafx.scene.control.ListView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
+import java.io.IOException;
 import java.util.List;
 
 public class App extends Application {
@@ -30,11 +33,36 @@ public class App extends Application {
         courseList.setPrefWidth((150));
 
         Button loadData = new Button("Load Data");
+        Button writeData = new Button("Write Data");
 
-        //On button click, load student data in and display to listview
+        // On button click, load student data in and display to listview
         loadData.setOnAction(value -> {
             IOManager iom = new IOManager();
             List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");
+
+            for (int i = 0; i < listOfStudents.size(); i++) {
+                studentList.getItems().add(listOfStudents.get(i));
+            }
+        });
+
+        writeData.setOnAction(value -> {
+            IOManager iom = new IOManager();
+            List<Student> listOfStudents = iom.readData("src\\main\\java\\edu\\isu\\cs\\cs2263\\StudentData.json");
+            try {
+                iom.writeData("src\\main\\java\\edu\\isu\\cs\\cs2263\\WrittenStudentData.json", listOfStudents);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+
+        
+        studentList.setOnMouseClicked(value -> {
+            courseList.getItems().clear();
+            ObservableList<Student> selectedIndex = studentList.getSelectionModel().getSelectedItems();
+            for (Student s : selectedIndex) {
+                courseList.getItems().addAll(s.getCourse());
+            }
+
         });
 
         VBox studentVBox = new VBox(studentLabel, studentList);
@@ -44,7 +72,7 @@ public class App extends Application {
         takingHBox.setPrefHeight(300);
         takingHBox.setPrefWidth(300);
 
-        HBox hBox = new HBox(studentVBox, takingHBox, courseVBox, loadData);
+        HBox hBox = new HBox(studentVBox, takingHBox, courseVBox, loadData, writeData);
         Scene scene = new Scene(hBox, 800, 400);
         stage.setScene(scene);
         stage.show();

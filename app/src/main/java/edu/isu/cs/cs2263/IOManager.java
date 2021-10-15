@@ -12,15 +12,13 @@ import com.google.gson.reflect.TypeToken;
 
 public class IOManager implements Serializable {
 
-
     /**
      * 
-     * @param fileName StudentData.json file 
+     * @param fileName StudentData.json file
      * @return List of students with information read from StudentData.json file
      */
     public List<Student> readData(String fileName) {
         try {
-
             File jsonFile = new File(fileName);
             String jsonString = "";
 
@@ -41,26 +39,18 @@ public class IOManager implements Serializable {
         }
         return null;
     }
+
     /**
      * 
      * @param writeStudentData New file to write student data to
-     * @param studentList Student list that was read in from the readData method
-     * @throws IOException
+     * @param studentList      Student list that was read in from the readData
+     *                         method
      */
-    public void writeData(File writeStudentData, List<Student> studentList) throws IOException {
+    public void writeData(String writeStudentData, List<Student> studentList) throws IOException {
         Gson gson = new Gson();
-        FileWriter file;
-        try {
-            file = new FileWriter("main\\java\\edu\\isu\\cs\\cs2263\\WriteStudentData.json");
-            file.write(studentList.toString());
-            gson.toJson(file);
-             
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-            
-        
-        
+        Type studentListType = new TypeToken<List<Student>>() {
+        }.getType();
+        gson.toJson(studentList, studentListType);
 
     }
 }

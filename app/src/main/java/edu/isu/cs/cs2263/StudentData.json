@@ -4,17 +4,17 @@
         "lastName": "Smith",
         "courseList": [
             {
-                "number": 0,
+                "number": 1181,
                 "subject": "CS",
                 "title": "Title 0"
             },
             {
-                "number": 1,
+                "number": 1182,
                 "subject": "CS",
                 "title": "Title 1"
             },
             {
-                "number": 2,
+                "number": 2235,
                 "subject": "CS",
                 "title": "Title 2"
             }
@@ -25,17 +25,17 @@
         "lastName": "Jones",
         "courseList": [
             {
-                "number": 0,
+                "number": 3307,
                 "subject": "INFO",
                 "title": "Title 0"
             },
             {
-                "number": 1,
+                "number":4407,
                 "subject": "INFO",
                 "title": "Title 1"
             },
             {
-                "number": 2,
+                "number": 1182,
                 "subject": "CS",
                 "title": "Title 2"
             }
@@ -46,17 +46,17 @@
         "lastName": "Williams",
         "courseList": [
             {
-                "number": 0,
+                "number": 1181,
                 "subject": "CS",
                 "title": "Title 0"
             },
             {
-                "number": 1,
+                "number": 1182,
                 "subject": "CS",
                 "title": "Title 1"
             },
             {
-                "number": 2,
+                "number":3307,
                 "subject": "INFO",
                 "title": "Title 2"
             }

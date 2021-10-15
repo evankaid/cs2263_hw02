@@ -3,15 +3,23 @@ package edu.isu.cs.cs2263;
 import java.util.List;
 import com.google.gson.Gson;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.Serializable;
 import java.lang.reflect.Type;
-import java.util.Scanner; // Import the Scanner class to read text files
+import java.util.Scanner;
 import com.google.gson.reflect.TypeToken;
 
 public class IOManager implements Serializable {
 
+
+    /**
+     * 
+     * @param fileName StudentData.json file 
+     * @return List of students with information read from StudentData.json file
+     */
     public List<Student> readData(String fileName) {
-        try{
+        try {
 
             File jsonFile = new File(fileName);
             String jsonString = "";
@@ -23,20 +31,36 @@ public class IOManager implements Serializable {
             }
             System.out.println(jsonString);
 
-            Gson gs = new  Gson();
-            Type studentListType = new TypeToken<List<Student>>(){}.getType();
+            Gson gs = new Gson();
+            Type studentListType = new TypeToken<List<Student>>() {
+            }.getType();
             List<Student> obj = gs.fromJson(jsonString, studentListType);
             return obj;
-        } catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
         return null;
     }
-
-    public void writeData(File StudentData, List<Student> studentList) {
+    /**
+     * 
+     * @param writeStudentData New file to write student data to
+     * @param studentList Student list that was read in from the readData method
+     * @throws IOException
+     */
+    public void writeData(File writeStudentData, List<Student> studentList) throws IOException {
         Gson gson = new Gson();
-
-        gson.toJson(studentList);
+        FileWriter file;
+        try {
+            file = new FileWriter("main\\java\\edu\\isu\\cs\\cs2263\\WriteStudentData.json");
+            file.write(studentList.toString());
+            gson.toJson(file);
+             
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+            
+        
+        
 
     }
 }

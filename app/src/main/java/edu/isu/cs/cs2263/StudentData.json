@@ -6,17 +6,17 @@
             {
                 "number": 1181,
                 "subject": "CS",
-                "title": "Title 0"
+                "title": "Intro to Programming"
             },
             {
                 "number": 1182,
                 "subject": "CS",
-                "title": "Title 1"
+                "title": "Intro to Programming 2"
             },
             {
                 "number": 2235,
                 "subject": "CS",
-                "title": "Title 2"
+                "title": "Data Structures"
             }
         ]
     },
@@ -27,17 +27,17 @@
             {
                 "number": 3307,
                 "subject": "INFO",
-                "title": "Title 0"
+                "title": "Systems Analysis and Design"
             },
             {
                 "number":4407,
                 "subject": "INFO",
-                "title": "Title 1"
+                "title": "Database Design and Implementation"
             },
             {
                 "number": 1182,
                 "subject": "CS",
-                "title": "Title 2"
+                "title": "Intro to Programming 2 2"
             }
         ]
     },
@@ -48,12 +48,12 @@
             {
                 "number": 1181,
                 "subject": "CS",
-                "title": "Title 0"
+                "title": "Intro to Programming"
             },
             {
                 "number": 1182,
                 "subject": "CS",
-                "title": "Title 1"
+                "title": "Intro to Programming 2"
             },
             {
                 "number":3307,
